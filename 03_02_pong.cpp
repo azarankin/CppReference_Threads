@@ -8,6 +8,7 @@
 int main()
 {
     std::cout << "Pong Server" << std::endl;
+    Sleep(1000);
     HANDLE pingSemaphore = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, L"ping");
     HANDLE pongSemaphore = OpenSemaphore(SEMAPHORE_ALL_ACCESS, FALSE, L"pong");
 

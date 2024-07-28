@@ -20,8 +20,9 @@ void func_main1()
     while (true) {
 
         WaitForSingleObject(pingSemaphore, INFINITE);
-
+        std::cout << "-" << std::flush;
         std::cout << "\rPing" << std::flush;
+        std::cout << "-" << std::flush;
         Sleep(1000);
         std::cout << "\r    " << std::flush;
         Sleep(1000);
@@ -34,6 +35,7 @@ void func_main1()
 
 void func_main2()
 {
+    Sleep(1000);
     std::cout << "Running Function 2" << std::endl;
     // Add your function logic here
     std::cout << "Pong Server" << std::endl;
@@ -42,8 +44,9 @@ void func_main2()
 
     while (true) {
         WaitForSingleObject(pongSemaphore, INFINITE);
-
+        std::cout << "-" << std::flush;
         std::cout << "\rPong" << std::flush;
+        std::cout << "-" << std::flush;
         Sleep(1000);
         std::cout << "\r    " << std::flush;
         Sleep(1000);

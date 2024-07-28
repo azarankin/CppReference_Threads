@@ -8,6 +8,7 @@
 int main()
 {
     std::cout << "Ping Server" << std::endl;
+    Sleep(1000);
     HANDLE pingSemaphore = CreateSemaphore(NULL, 0, 1, L"ping");
     HANDLE pongSemaphore = CreateSemaphore(NULL, 1, 1, L"pong");
 
