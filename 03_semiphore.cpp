@@ -9,7 +9,7 @@
 #include <mutex>
 #include <windows.h>
 #include <string>
-void func1()
+void func_main1()
 {
     std::cout << "Running Function 1" << std::endl;
     // Add your function logic here
@@ -32,7 +32,7 @@ void func1()
     CloseHandle(pongSemaphore);
 }
 
-void func2()
+void func_main2()
 {
     std::cout << "Running Function 2" << std::endl;
     // Add your function logic here
@@ -66,8 +66,8 @@ void launchTerminalWithFunction(const std::string& executablePath, const std::st
 
 void runFunctionsInSeparateTerminals(const std::string& executablePath)
 {
-    std::thread t1([&]() { launchTerminalWithFunction(executablePath, "func1"); });
-    std::thread t2([&]() { launchTerminalWithFunction(executablePath, "func2"); });
+    std::thread t1([&]() { launchTerminalWithFunction(executablePath, "func_main1"); });
+    std::thread t2([&]() { launchTerminalWithFunction(executablePath, "func_main2"); });
 
     t1.join();
     t2.join();
@@ -84,13 +84,13 @@ int main(int argc, char* argv[])
     {
         std::string funcName = argv[1];
 
-        if (funcName == "func1")
+        if (funcName == "func_main1")
         {
-            func1();
+            func_main1();
         }
-        else if (funcName == "func2")
+        else if (funcName == "func_main2")
         {
-            func2();
+            func_main2();
         }
         else
         {
@@ -102,7 +102,7 @@ int main(int argc, char* argv[])
     }
     else
     {
-        std::cerr << "Usage: " << argv[0] << " [func1|func2]" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " [func_main1|func_main2]" << std::endl;
         return 1;
     }
 

@@ -22,7 +22,8 @@ project ("CppReference_Threads")
 add_executable (01_Unique_Lock "01_unique_lock.cpp")
 add_executable (02_Condition_Variable "02_condition_variable.cpp")
 add_executable (03_Semiphore "03_semiphore.cpp")
-
+add_executable (03_01_Ping "03_01_ping.cpp")
+add_executable (03_02_Pong "03_02_pong.cpp")
 
 #set_property(TARGET 03_Semiphore PROPERTY CXX_STANDARD 20)
 
